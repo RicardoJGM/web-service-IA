@@ -30,6 +30,71 @@ Puntos clave:
 
 ## Diagrama de Bloques
 
++-----------------------------------+
+|                                   |
+|   Cargar datos desde archivo CSV   |
+|                                   |
++-----------------------------------+
+                |
+                v
++-----------------------------------+
+|                                   |
+|   Preprocesamiento de datos        |
+|                                   |
++-----------------------------------+
+                |
+                v
++-----------------------------------+
+|                                   |
+|   Codificación de etiquetas        |
+|                                   |
++-----------------------------------+
+                |
+                v
++-----------------------------------+
+|                                   |
+|   División de datos en conjuntos  |
+|   de entrenamiento y prueba       |
+|                                   |
++-----------------------------------+
+                |
+                v
++-----------------------------------+
+|                                   |
+|   Extracción de características   |
+|                                   |
++-----------------------------------+
+                |
+                v
++-----------------------------------+
+|                                   |
+|   Entrenamiento del modelo        |
+|                                   |
+|                                   |
++-----------------------------------+
+                |
+                v
++-----------------------------------+
+|                                   |
+|   Evaluación del modelo           |
+|                                   |
++-----------------------------------+
+                |
+                v
++-----------------------------------+
+|                                   |
+|   Predicción en nuevos datos      |
+|                                   |
++-----------------------------------+
+                |
+                v
++-----------------------------------+
+|                                   |
+|   Clasificación del correo        |
+|   como "Ham" o "Spam"             |
+|                                   |
++-----------------------------------+
+
 ## Ejemplo de uso para preprocesamiento de datos y entrenamiento del modelo
 
 ![image](https://github.com/RicardoJGM/web-service-IA/assets/166866230/8c45b9e8-cbbd-45d8-b023-578cf7bd3a18)
