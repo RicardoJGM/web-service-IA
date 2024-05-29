@@ -1,4 +1,9 @@
 # Identificación de Correos Spam
+## Integrantes y Roles en el Proyecto
+* Jose Adolfo Jimenez Solis y  Ricardo de Jesus Garcia Mejia: Desarrolladores Backend.
+* Carlos Santamaria Solina: Desarrollador Frontend.
+* Diego Azpe Carmona: Analisis de Datos.
+
 ## Objetivo del Script
 El objetivo de este script es desarrollar un modelo de Machine Learning para identificar correos spam utilizando técnicas de procesamiento de texto y aprendizaje supervisado. Además, se crea una interfaz web con Flask para facilitar la interacción con el modelo.
 
@@ -42,11 +47,6 @@ Puntos clave:
 | **accuracy**  |           |        | 0.98     | 1115    |
 | **macro avg** | 0.99      | 0.94   | 0.96     | 1115    |
 | **weighted avg** | 0.98   | 0.98   | 0.98     | 1115    |
-
-## Integrantes y Roles en el Proyecto
-* Jose Adolfo Jimenez Solis y  Ricardo de Jesus Garcia Mejia: Desarrolladores Backend.
-* Carlos Santamaria Solina: Desarrollador Frontend.
-* Diego Azpe Carmona: Analisis de Datos.
 
 ## Diagrama de Bloques
 
