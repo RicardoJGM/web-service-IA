@@ -1,4 +1,4 @@
-#Code created by: 
+#Code created by:
 # -Ricardo de Jesús García Mejía - 200820130
 # -José Adolfo Jinménez Solís - 202060215
 import numpy as np
@@ -52,5 +52,9 @@ def classify_message(message):
 # Solicitar un mensaje al usuario y clasificarlo
 # user_message = input("Ingrese el mensaje a clasificar: ")
 def predict_mail_body(mailbody):
+
+    if not mailbody: 
+        return "The Given Message is Empty" 
+
     classification, spam_probability = classify_message(mailbody)
     return(f"The Evaluated Message is classified as: {classification}\nProbability to be Spam: {spam_probability:.2f}%")

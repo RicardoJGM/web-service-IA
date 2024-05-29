@@ -20,5 +20,11 @@
             <h2>{{ result }}</h2>
         {% endif %}
     </div>
+    <script>
+        // Verificar si el formulario se envió correctamente
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
 </body>
 </html>
