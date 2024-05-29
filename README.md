@@ -3,11 +3,15 @@
 El objetivo de este script es desarrollar un modelo de Machine Learning para identificar correos spam utilizando técnicas de procesamiento de texto y aprendizaje supervisado. Además, se crea una interfaz web con Flask para facilitar la interacción con el modelo.
 
 ## En qué Consiste
+Se trata de un projecto final en el cual se encuentran 2 scripts de python: 
+- app.py: el cual se encarga de proporcionar un servicio por medio de webservice de una página web que tiene como objetivo recibir un mensaje de cuerpo de email en inglés para procesarlo y determinar si se trata de spam o no.
+- preprocessing.py: este script contiene el modelo SVM con el que se entrenó con un set de datos de correos spam y no spam, además contiene la generación de métricas y el porcentaje de predicción efectiva del modelo, cuenta con una función la cual se le proporciona a app.py para delimitar si el texto enviado es spam o no. 
 ### Librerías Utilizadas
 - Flask: Utilizado para crear la interfaz web.
 - Pandas y NumPy: Para la manipulación y análisis de datos.
 - Scikit-Learn: Para la construcción del modelo de Machine Learning.
-- Otros paquetes como Joblib, Jinja2, y Werkzeug para funcionalidades adicionales.
+- Seaborn: Proporciona una interfaz de alto nivel para dibujar gráficos estadísticos atractivos y con estilo.
+- Otros paquetes como Joblib, Jinja2, y Werkzeug para funcionalidades adicionales en servicios web.
 
 ### Modelos Utilizados
 SVM (Support Vector Machines): es un algoritmo de aprendizaje supervisado que se utiliza en muchos problemas de clasificación y regresión, incluidas aplicaciones médicas de procesamiento de señales, procesamiento del lenguaje natural y reconocimiento de imágenes y voz.
