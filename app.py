@@ -1,10 +1,15 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from preprocessing import predict_mail_body
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
-    return render_template('index.html')
+    result = None
+    if request.method == 'POST':
+        input_value = request.form['emailBody']
+        result = predict_mail_body(input_value)
+    return render_template('index.html', result=result)
 
 @app.route('/about_model')
 def about():

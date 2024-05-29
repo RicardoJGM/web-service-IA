@@ -9,14 +9,18 @@
 <body>
     <div class="container">
         <h1>Detector de Spam</h1>
-        <form id="spamForm">
-            <textarea id="emailBody" placeholder="Ingrese el cuerpo del correo electrónico aquí..."></textarea>
-            <button type="button" class="btnSpam">Evaluar Spam</button>
+        <form id="spamForm" method="POST">
+            <textarea id="emailBody" name="emailBody" placeholder="Ingrese el cuerpo del correo electrónico aquí..."></textarea>
+            <button type="submit" class="btnSpam">Evaluar Spam</button>
         </form>
         <div class="result" id="result"></div>
         <a href="{{ url_for('about') }}" class="btn-link">Información sobre el Modelo SVM</a>
+        <div class="result" id="result"></div>
+        {% if result %}
+            <h2>{{ result }}</h2>
+        {% endif %}
     </div>
 
-    <script src="{{ url_for('static', filename='script/script.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='script/script.js') }}"></script> -->
 </body>
 </html>

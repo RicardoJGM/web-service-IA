@@ -1,72 +1,53 @@
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score
-from sklearn.metrics import classification_report
-from sklearn.metrics import confusion_matrix
+from sklearn.svm import SVC
 
-# Data Collection and Pre Processing
-# 1 Load Data from csv file to a pandas datafram
-raw_mail_data = pd.read_csv('Identify-Spam-Email-ML-Model/mail_data.csv')
-mail_data = raw_mail_data.where(pd.notnull(raw_mail_data),'')
+# Cargar los datos
+df = pd.read_csv('spam.csv')
 
-#  Label Encoding
-mail_data.loc[mail_data['Category'] == 'spam', 'Category'] = 0
-mail_data.loc[mail_data['Category'] == 'ham', 'Category'] = 1
+#df.info()
+#print(df.shape)
+#print(df.head())
 
-X = mail_data['Message']
-Y = mail_data['Category']
+# Visualización de la distribución de las categorías
+# plt.figure(figsize=(8, 8))
+# df['Category'].value_counts().plot(kind='pie', autopct='%1.0f%%')
+# plt.title('Pie chart')
+# plt.show()
 
-X_Train,X_test,Y_Train,Y_test = train_test_split(X,Y,test_size=0.2,random_state=3)
+# Separar los datos en características (X) y etiquetas (y)
+x = df['Message'].values
+y = df['Category'].values
 
-# Feature Extraction 
-# Transform text data to feature vectors that can be used as input to the logistic regression
-feature_extraction = TfidfVectorizer(min_df=1,stop_words='english',lowercase=True)
+# Dividir los datos en conjuntos de entrenamiento y prueba
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=0)
 
-X_train_feature = feature_extraction.fit_transform(X_Train)
-X_test_feature = feature_extraction.transform(X_test)
+# Vectorizar el texto
+cv = CountVectorizer()
+x_train = cv.fit_transform(x_train)
+x_test = cv.transform(x_test)
 
-#  Convert Y_train and Y_test as Integers
-Y_Train = Y_Train.astype('int')
-Y_test = Y_test.astype('int')
+# Entrenar el modelo SVC
+model = SVC(random_state=0, probability=True)
+model.fit(x_train, y_train)
 
-# Training the Model
-# Logistic Regression
-model = LogisticRegression()
+# Evaluar la precisión del modelo
+score = model.score(x_test, y_test)
+print(f"Accuracy: {score}")
 
-model.fit(X_train_feature,Y_Train)
+# Función para predecir si un mensaje es Spam o Ham y la probabilidad de ser Spam
+def classify_message(message):
+    message_transformed = cv.transform([message])
+    prediction = model.predict(message_transformed)
+    probability = model.predict_proba(message_transformed)
+    spam_probability = probability[0][1] * 100
+    return prediction[0], spam_probability
 
-# Evaluating the Trained Model
-# Predition on Training Model
-prediction_on_Training_Data = model.predict(X_train_feature)
-accuracy_on_training_data = accuracy_score(Y_Train,prediction_on_Training_Data)
-
-print("Accuracy for Training : ",accuracy_on_training_data * 100)
-
-# Predict on Test Data
-prediction_on_Test_Data = model.predict(X_test_feature)
-accuracy_on_test_data = accuracy_score(Y_test,prediction_on_Test_Data)
-
-print("Accuracy for Training : ",accuracy_on_test_data * 100)
-
-predictions = model.predict(X_test_feature)
-# print(classification_report(Y_test, predictions),'\n')
-# print(confusion_matrix(Y_test, predictions))
-
-#  Building a Predictable System
-input_mail = ["Dear friend, I am a Financial Consultant in control of privately owned funds placed for long term investments. My client intends to invest these funds in projects. I am willing to finance projects at a guaranteed 5% ROI per annum for projects ranging from 2 years term and above but not exceeding 12 years. Please answer ASAP."]
-
-# Convert Text to feature vectors
-input_data_feature = feature_extraction.transform(input_mail)
-
-# Making Prediction
-prediction = model.predict(input_data_feature)
-
-print(prediction)
-
-if(prediction == [1]):
-    print("This is the Ham Mail.")
-else:
-    print("This is the Spam Mail.")
+# Solicitar un mensaje al usuario y clasificarlo
+# user_message = input("Ingrese el mensaje a clasificar: ")
+def predict_mail_body(mailbody):
+    classification, spam_probability = classify_message(mailbody)
+    return(f"El mensaje introducido es clasificado como: {classification}\nProbabilidad de ser Spam: {spam_probability:.2f}%")
