@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo SVM</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/info.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Información sobre el Modelo SVM</h1>
+        <p>SVM (Support Vector Machines) es un algoritmo de aprendizaje supervisado que se utiliza para clasificación y regresión. Su objetivo principal es encontrar un hiperplano que separe las diferentes clases en el espacio de características de la mejor forma posible.</p>
+        
+        <h2>Características del SVM</h2>
+        <ul>
+            <li>Capaz de manejar datos de alta dimensionalidad.</li>
+            <li>Utiliza un conjunto de funciones núcleo para transformar los datos.</li>
+            <li>Optimiza el margen entre clases.</li>
+            <li>Puede utilizarse tanto para problemas lineales como no lineales.</li>
+        </ul>
+        
+        <h2>Funcionamiento del SVM</h2>
+        <p>El algoritmo SVM trabaja buscando el hiperplano que mejor separa las dos clases de datos. Para problemas no lineales, SVM utiliza una técnica llamada <em>kernelling</em> (uso de funciones núcleo) para transformar los datos a un espacio de mayor dimensión donde puedan ser separables linealmente.</p>
+        
+        <h3>Conceptos Clave</h3>
+        <ul>
+            <li><strong>Margen:</strong> La distancia entre el hiperplano y los puntos de datos más cercanos de cualquier clase. SVM maximiza este margen.</li>
+            <li><strong>Vectores de Soporte:</strong> Los puntos de datos más cercanos al hiperplano, que son los que determinan su posición.</li>
+            <li><strong>Función Núcleo (Kernel):</strong> Método para transformar los datos a un espacio de mayor dimensión. Ejemplos incluyen lineal, polinomial, radial (RBF), y sigmoidal.</li>
+        </ul>
+        
+        <h2>Tipos de Funciones Núcleo</h2>
+        <ul>
+            <li><strong>Lineal:</strong> Adecuada para datos que son linealmente separables.</li>
+            <li><strong>Polinomial:</strong> Para datos que no son linealmente separables pero se pueden separar en un espacio de mayor dimensión.</li>
+            <li><strong>Radial Basis Function (RBF):</strong> Comúnmente utilizada en problemas donde los datos no son linealmente separables en su espacio original.</li>
+            <li><strong>Sigmoidal:</strong> Utilizada en redes neuronales y otros modelos.</li>
+        </ul>
+        
+        <h2>Aplicaciones del SVM</h2>
+        <ul>
+            <li>Clasificación de imágenes.</li>
+            <li>Aplicaciones medicas de procesamiento de señales.</li>
+            <li>procesamiento del lenguaje natural.</li>
+            <li>Reconocimiento de imágenes y voz.</li>
+        </ul>
+        
+        <h2>Ventajas del SVM</h2>
+        <ul>
+            <li>Ser efectivos en espacios de alta dimensionalidad, aun cuando el número de dimensiones supera el número de muestras.</li>
+            <li>Eficiente gestión de la memoria, al usar solo un subconjunto de puntos en la función de decisión.</li>
+        </ul>
+        
+        <h2>Desventajas del SVM</h2>
+        <ul>
+            <li>Su eficacia depende del kernel que se escoja.</li>
+            <li>Resultan poco eficientes con datasets grandes.</li>
+            <li>SVM no proporciona estimaciones de probabilidad.</li>
+        </ul>
+        
+        <a href="{{ url_for('index') }}" class="btn">Volver al Detector de Spam</a>
+    </div>
+</body>
+</html>
