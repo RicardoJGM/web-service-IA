@@ -24,9 +24,9 @@ Puntos clave:
 - Para construir la superficie de decisión, solo se requieren los vectores de soporte seleccionados a partir de los datos de entrenamiento. Una vez terminado el entrenamiento, el resto de los datos de entrenamiento es irrelevante, produciendo una representación compacta del modelo que es adecuada para generar código de forma automatizada.
 
 ## Integrantes y Roles en el Proyecto
-* Adolfo y  Ricardo: Desarrolladores Backend.
-* Carlos: Desarrollador Frontend.
-* Diego: Analisis de Datos.
+* Jose Adolfo Jimenez Solis y  Ricardo de Jesus Garcia Mejia: Desarrolladores Backend.
+* Carlos Santamaria Solina: Desarrollador Frontend.
+* Diego Azpe Carmona: Analisis de Datos.
 
 ## Diagrama de Bloques
 
