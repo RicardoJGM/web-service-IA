@@ -10,12 +10,24 @@ El objetivo de este script es desarrollar un modelo de Machine Learning para ide
 - Otros paquetes como Joblib, Jinja2, y Werkzeug para funcionalidades adicionales.
 
 ### Modelos Utilizados
-Logistic Regression: Modelo utilizado para la clasificación de correos como spam o no spam.
+SVM (Support Vector Machines): es un algoritmo de aprendizaje supervisado que se utiliza en muchos problemas de clasificación y regresión, incluidas aplicaciones médicas de procesamiento de señales, procesamiento del lenguaje natural y reconocimiento de imágenes y voz.
+
+El objetivo del algoritmo SVM es encontrar un hiperplano que separe de la mejor forma posible dos clases diferentes de puntos de datos. “De la mejor forma posible” implica el hiperplano con el margen más amplio entre las dos clases, representado por los signos más y menos en la siguiente figura. El margen se define como la anchura máxima de la región paralela al hiperplano que no tiene puntos de datos interiores. El algoritmo solo puede encontrar este hiperplano en problemas que permiten separación lineal; en la mayoría de los problemas prácticos, el algoritmo maximiza el margen flexible permitiendo un pequeño número de clasificaciones erróneas.
+
+![image](https://github.com/RicardoJGM/web-service-IA/assets/166866230/73cce429-ad41-43d9-8201-4c29099bcc2e)
+
+Definición del “margen” entre clases: el criterio que los SVM intentan optimizar.
+
+Puntos clave:
+- Support vector machines son muy populares y logran un buen rendimiento en muchas tareas de clasificación y regresión.
+- Aunque los algoritmos SVM están formulados para la clasificación binaria, los algoritmos SVM multiclase se construyen combinando varios clasificadores binarios.
+- Los kernels hacen que los SVM sean más flexibles y capaces de gestionar problemas no lineales.
+- Para construir la superficie de decisión, solo se requieren los vectores de soporte seleccionados a partir de los datos de entrenamiento. Una vez terminado el entrenamiento, el resto de los datos de entrenamiento es irrelevante, produciendo una representación compacta del modelo que es adecuada para generar código de forma automatizada.
 
 ## Integrantes y Roles en el Proyecto
--Adolfo y  Ricardo: Desarrolladores Backend.
--Carlos: Desarrollador Frontend.
--Diego: Analisis de Datos.
+* Adolfo y  Ricardo: Desarrolladores Backend.
+* Carlos: Desarrollador Frontend.
+* Diego: Analisis de Datos.
 
 ## Diagrama de Bloques
 
