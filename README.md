@@ -30,6 +30,8 @@ Puntos clave:
 
 ## Diagrama de Bloques
 
+![diagrama de bloques](https://github.com/RicardoJGM/web-service-IA/assets/166866230/44ac9dc0-31b3-4006-9140-bfcbe4131eb6)
+
 ## Ejemplo de uso para preprocesamiento de datos y entrenamiento del modelo
 
 ![image](https://github.com/RicardoJGM/web-service-IA/assets/166866230/8c45b9e8-cbbd-45d8-b023-578cf7bd3a18)
