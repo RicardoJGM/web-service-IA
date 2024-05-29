@@ -3,24 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detector de Spam</title>
+    <title>Spam Detector</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Detector de Spam</h1>
+        <h1>Spam Detector</h1>
         <form id="spamForm" method="POST">
-            <textarea id="emailBody" name="emailBody" placeholder="Ingrese el cuerpo del correo electrónico aquí..."></textarea>
-            <button type="submit" class="btnSpam">Evaluar Spam</button>
+            <textarea id="emailBody" name="emailBody" placeholder="Input the Email Body to Evaluate Here... (Only English)"></textarea>
+            <button type="submit" class="btnSpam">Evaluate Email Body</button>
         </form>
         <div class="result" id="result"></div>
-        <a href="{{ url_for('about') }}" class="btn-link">Información sobre el Modelo SVM</a>
+        <a href="{{ url_for('about') }}" class="btn-link">About SVM Model</a>
         <div class="result" id="result"></div>
         {% if result %}
             <h2>{{ result }}</h2>
         {% endif %}
     </div>
-
-    <!-- <script src="{{ url_for('static', filename='script/script.js') }}"></script> -->
 </body>
 </html>

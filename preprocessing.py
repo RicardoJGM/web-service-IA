@@ -1,3 +1,6 @@
+#Code created by: 
+# -Ricardo de Jesús García Mejía - 200820130
+# -José Adolfo Jinménez Solís - 202060215
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -50,4 +53,4 @@ def classify_message(message):
 # user_message = input("Ingrese el mensaje a clasificar: ")
 def predict_mail_body(mailbody):
     classification, spam_probability = classify_message(mailbody)
-    return(f"El mensaje introducido es clasificado como: {classification}\nProbabilidad de ser Spam: {spam_probability:.2f}%")
+    return(f"The Evaluated Message is classified as: {classification}\nProbability to be Spam: {spam_probability:.2f}%")
