@@ -60,6 +60,45 @@ Puntos clave:
 ![image](https://github.com/RicardoJGM/web-service-IA/assets/166866230/4129b8a8-1500-4bc5-a4d3-56b0fb30b875)
 ![image](https://github.com/RicardoJGM/web-service-IA/assets/166866230/d1a268f7-ced1-4480-ab0b-74824ae6dc00)
 
+## Página de demostración
+[Demo](http://64.23.219.213:5000)
+
 ## Instalación
-Para instalar las dependencias del proyecto, ejecuta el siguiente comando en tu entorno virtual:
-`pip install -r requirements.txt`
+### Prerequesito: Python Instalado
+**Instalar Python**:
+    ```bash
+    sudo dnf install python3
+    ```
+
+**Verificar la instalación**:
+    ```bash
+    python3 --version
+    ```
+### Instalar Python Virtual Environment
+1. **Instalar `virtualenv`**:
+    ```bash
+    pip install virtualenv
+    ```
+2. **Crear un entorno virtual**:
+    ```bash
+    virtualenv myenv
+    ```
+3. **Activar el entorno virtual**:
+    - En Windows:
+        ```bash
+        myenv\Scripts\activate
+        ```
+    - En MacOS/Linux:
+        ```bash
+        source myenv/bin/activate
+        ```
+4. **Instalar paquetes necesarios con requirements.txt del documento**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+5. **Iniciar app.py con python**
+   ```bash
+   python app.py
+   ```
+6. Ingresar a con el navegador a la direccion 'localhost' puerto 5000 (http://localhost:5000).
+7. Ingresar un mensaje de cuerpo de correo electrónico y enviar el formulario, después de este paso de determina si es spam o no el mensaje enviado.
