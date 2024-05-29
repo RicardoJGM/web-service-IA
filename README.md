@@ -18,16 +18,6 @@ Logistic Regression: Modelo utilizado para la clasificación de correos como spa
 -Diego: Analisis de Datos.
 
 ## Diagrama de Bloques
-El proceso de trabajo del proyecto se describe en el siguiente diagrama de bloques:
-1. Carga de datos desde un archivo CSV.
-2. Preprocesamiento de los datos (limpieza, codificación de etiquetas).
-3. Extracción de características mediante TF-IDF Vectorizer.
-4. División de datos en conjuntos de entrenamiento y prueba.
-5. Entrenamiento del modelo Logistic Regression.
-6. Evaluación del modelo y generación de métricas de rendimiento.
-7. Creación de la interfaz web con Flask.
-8. Despliegue del modelo y la interfaz en un entorno de producción.
-
 
 ## Ejemplo de uso para preprocesamiento de datos y entrenamiento del modelo
 
