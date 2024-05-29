@@ -27,7 +27,7 @@ El proceso de trabajo del proyecto se describe en el siguiente diagrama de bloqu
 6. Evaluación del modelo y generación de métricas de rendimiento.
 7. Creación de la interfaz web con Flask.
 8. Despliegue del modelo y la interfaz en un entorno de producción.
-Ejemplos de Uso
+
 
 ## Ejemplo de uso para preprocesamiento de datos y entrenamiento del modelo
 
