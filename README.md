@@ -14,9 +14,8 @@ SVM (Support Vector Machines): es un algoritmo de aprendizaje supervisado que se
 
 El objetivo del algoritmo SVM es encontrar un hiperplano que separe de la mejor forma posible dos clases diferentes de puntos de datos. “De la mejor forma posible” implica el hiperplano con el margen más amplio entre las dos clases, representado por los signos más y menos en la siguiente figura. El margen se define como la anchura máxima de la región paralela al hiperplano que no tiene puntos de datos interiores. El algoritmo solo puede encontrar este hiperplano en problemas que permiten separación lineal; en la mayoría de los problemas prácticos, el algoritmo maximiza el margen flexible permitiendo un pequeño número de clasificaciones erróneas.
 
-![image](https://github.com/RicardoJGM/web-service-IA/assets/166866230/73cce429-ad41-43d9-8201-4c29099bcc2e)
-
-Definición del “margen” entre clases: el criterio que los SVM intentan optimizar.
+![image](https://github.com/RicardoJGM/web-service-IA/assets/166866230/73cce429-ad41-43d9-8201-4c29099bcc2e)                                                                                                                                                       
+                                                  *Definición del “margen” entre clases: el criterio que los SVM intentan optimizar.*
 
 Puntos clave:
 - Support vector machines son muy populares y logran un buen rendimiento en muchas tareas de clasificación y regresión.
