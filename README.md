@@ -9,7 +9,7 @@ El objetivo de este script es desarrollar un modelo de Machine Learning para ide
 - Scikit-Learn: Para la construcción del modelo de Machine Learning.
 - Otros paquetes como Joblib, Jinja2, y Werkzeug para funcionalidades adicionales.
 
-## Modelos Utilizados
+### Modelos Utilizados
 Logistic Regression: Modelo utilizado para la clasificación de correos como spam o no spam.
 
 ## Integrantes y Roles en el Proyecto
