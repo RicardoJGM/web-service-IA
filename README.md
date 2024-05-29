@@ -27,6 +27,22 @@ Puntos clave:
 - Los kernels hacen que los SVM sean más flexibles y capaces de gestionar problemas no lineales.
 - Para construir la superficie de decisión, solo se requieren los vectores de soporte seleccionados a partir de los datos de entrenamiento. Una vez terminado el entrenamiento, el resto de los datos de entrenamiento es irrelevante, produciendo una representación compacta del modelo que es adecuada para generar código de forma automatizada.
 
+## Métricas obtenidas del modelo
+### Gráfico de categorización del data frame
+![Grafico de Distribucion de categorías](https://github.com/RicardoJGM/web-service-IA/assets/112904134/f9e39862-f183-4ba6-91fa-cce7763a30e8)
+
+### Matriz de confusión del modelo
+![Matriz de confusion](https://github.com/RicardoJGM/web-service-IA/assets/112904134/ece4df2c-310b-492f-be32-d4b2c95dafe4)
+
+## Reporte de clasificación del modelo
+| Class         | Precision | Recall | F1-Score | Support |
+|---------------|-----------|--------|----------|---------|
+| **ham**       | 0.98      | 1.00   | 0.99     | 955     |
+| **spam**      | 0.99      | 0.88   | 0.93     | 160     |
+| **accuracy**  |           |        | 0.98     | 1115    |
+| **macro avg** | 0.99      | 0.94   | 0.96     | 1115    |
+| **weighted avg** | 0.98   | 0.98   | 0.98     | 1115    |
+
 ## Integrantes y Roles en el Proyecto
 * Jose Adolfo Jimenez Solis y  Ricardo de Jesus Garcia Mejia: Desarrolladores Backend.
 * Carlos Santamaria Solina: Desarrollador Frontend.
