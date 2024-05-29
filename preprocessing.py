@@ -1,25 +1,23 @@
-#Code created by:
-# -Ricardo de Jesús García Mejía - 200820130
-# -José Adolfo Jinménez Solís - 202060215
-import numpy as np
+#Created by:
+# - Ricardo de Jesús García Mejía - 200820130@ucc.mx
+# - José Adolfo Jiménez Solís - 202060215@ucc.mx
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
+from sklearn.metrics import confusion_matrix, classification_report
+import io
 
 # Cargar los datos
 df = pd.read_csv('spam.csv')
 
-#df.info()
-#print(df.shape)
-#print(df.head())
-
 # Visualización de la distribución de las categorías
-# plt.figure(figsize=(8, 8))
-# df['Category'].value_counts().plot(kind='pie', autopct='%1.0f%%')
-# plt.title('Pie chart')
-# plt.show()
+plt.figure(figsize=(8, 8))
+df['Category'].value_counts().plot(kind='pie', autopct='%1.0f%%')
+plt.title('Distribución de categorías')
+plt.savefig('Images/Grafico de Distribucion de categorías')
 
 # Separar los datos en características (X) y etiquetas (y)
 x = df['Message'].values
@@ -41,6 +39,29 @@ model.fit(x_train, y_train)
 score = model.score(x_test, y_test)
 print(f"Accuracy: {score}")
 
+# Generar predicciones
+y_pred = model.predict(x_test)
+
+# Matriz de Confusión
+mc = confusion_matrix(y_test, y_pred)
+etiquetas = sorted(list(set(y_test)))
+
+fig, ax = plt.subplots(figsize=(10, 7))
+sns.heatmap(mc, annot=True, fmt='d', cmap='Blues', xticklabels=etiquetas, yticklabels=etiquetas, ax=ax)
+ax.set_xlabel('Predicted')
+ax.set_ylabel('True')
+ax.set_title('Matriz de confusión')
+
+# Guardar la imagen de la matriz de confusión
+fig.savefig('Images/Matriz de confusion.png')
+
+# Reporte de Clasificación
+reporte = classification_report(y_test, y_pred)
+
+# Guardar el reporte de clasificación en un archivo de texto
+with open('Reporte de clasificacion.txt', 'w') as f:
+    f.write(reporte)
+
 # Función para predecir si un mensaje es Spam o Ham y la probabilidad de ser Spam
 def classify_message(message):
     message_transformed = cv.transform([message])
@@ -49,12 +70,10 @@ def classify_message(message):
     spam_probability = probability[0][1] * 100
     return prediction[0], spam_probability
 
-# Solicitar un mensaje al usuario y clasificarlo
-# user_message = input("Ingrese el mensaje a clasificar: ")
+# Función para predecir y devolver resultados como cadena
 def predict_mail_body(mailbody):
-
-    if not mailbody: 
-        return "The Given Message is Empty" 
-
+    if not mailbody:
+        return "The Given Message is Empty"
+    
     classification, spam_probability = classify_message(mailbody)
-    return(f"The Evaluated Message is classified as: {classification}\nProbability to be Spam: {spam_probability:.2f}%")
+    return f"The Evaluated Message is classified as: {classification}\nProbability to be Spam: {spam_probability:.2f}%"
